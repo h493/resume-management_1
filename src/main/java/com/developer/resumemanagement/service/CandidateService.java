@@ -8,10 +8,12 @@ import java.util.Optional;
 
 
 public interface CandidateService {
-    List<CandidateEntity> findAllCandidate();
+
     Optional<CandidateEntity> findById(int id);
-    Optional<CandidateEntity> findByName(String name);
+    List<CandidateEntity> findByName(String name);
+    List<CandidateEntity> findByFirstName(String firstName);
+    List<CandidateEntity> findByLastName(String lastName);
     CandidateEntity saveCandidate(CandidateEntity candidateEntity);
-    CandidateEntity updateCandidate(CandidateEntity candidateEntity);
+
 
 }

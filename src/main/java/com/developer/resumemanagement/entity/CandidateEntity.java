@@ -19,6 +19,12 @@ public class CandidateEntity {
     @Column(name = "job_description")
     private String jobDescription;
 
+    @Column(name ="first_name")
+    private String firstName;
+
+    @Column(name ="last_name")
+    private String lastName;
+
     @Column(name = "job_company")
     private String jobCompany;
 
@@ -32,6 +38,10 @@ public class CandidateEntity {
         this.jobTitle = jobTitle;
         this.jobDescription = jobDescription;
         this.jobCompany = jobCompany;
+
+        this.firstName = name.substring(0, name.indexOf(' '));
+        this.lastName = name.substring(name.indexOf(' ')+1);
+       // System.out.println(name + "******" + lastName + "*****" + firstName);
     }
 
     public int getId() {
