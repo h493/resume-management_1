@@ -30,8 +30,8 @@ public class CandidateController {
        List<CandidateEntity> candidates = candidateService.findByName(candidateName);
 
        if(candidates == null || candidates.size() == 0){
-           List<CandidateEntity> firstNameMatch = candidateService.findByLastName(firstName);
-           List<CandidateEntity> lastNameMatch = candidateService.findByFirstName(lastName);
+           List<CandidateEntity> firstNameMatch = candidateService.findAllByFirstName(firstName);
+           List<CandidateEntity> lastNameMatch = candidateService.findAllByLastName(lastName);
 
            candidates.addAll(firstNameMatch);
            candidates.addAll(lastNameMatch);
@@ -42,6 +42,12 @@ public class CandidateController {
 
     @PostMapping("/uploadResumeDetails")
     public CandidateEntity uploadResumeDetails(@RequestBody CandidateEntity candidateEntity){
+        String candidateName = candidateEntity.getName();
+        String[] detail = candidateName.split(" ");
+        candidateEntity.setFirstName(detail[0]);
+        candidateEntity.setLastName(detail[1]);
+
+
         return candidateService.saveCandidate(candidateEntity);
     }
 }

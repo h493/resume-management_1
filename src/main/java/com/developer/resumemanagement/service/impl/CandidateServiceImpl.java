@@ -26,13 +26,13 @@ public class CandidateServiceImpl implements CandidateService {
     }
 
     @Override
-    public List<CandidateEntity> findByFirstName(String firstName) {
-        return candidateRepository.findByFirstName(firstName);
+    public List<CandidateEntity> findAllByFirstName(String firstName) {
+        return candidateRepository.findAllByFirstName(firstName);
     }
 
     @Override
-    public List<CandidateEntity> findByLastName(String lastName) {
-        return candidateRepository.findByLastName(lastName);
+    public List<CandidateEntity> findAllByLastName(String lastName) {
+        return candidateRepository.findAllByLastName(lastName);
     }
 
     @Override

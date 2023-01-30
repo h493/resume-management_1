@@ -19,8 +19,24 @@ public class CandidateEntity {
     @Column(name = "job_description")
     private String jobDescription;
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
     @Column(name ="first_name")
     private String firstName;
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     @Column(name ="last_name")
     private String lastName;
@@ -38,10 +54,6 @@ public class CandidateEntity {
         this.jobTitle = jobTitle;
         this.jobDescription = jobDescription;
         this.jobCompany = jobCompany;
-
-        this.firstName = name.substring(0, name.indexOf(' '));
-        this.lastName = name.substring(name.indexOf(' ')+1);
-       // System.out.println(name + "******" + lastName + "*****" + firstName);
     }
 
     public int getId() {

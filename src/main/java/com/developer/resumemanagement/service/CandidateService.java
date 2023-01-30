@@ -11,8 +11,8 @@ public interface CandidateService {
 
     Optional<CandidateEntity> findById(int id);
     List<CandidateEntity> findByName(String name);
-    List<CandidateEntity> findByFirstName(String firstName);
-    List<CandidateEntity> findByLastName(String lastName);
+    List<CandidateEntity> findAllByFirstName(String firstName);
+    List<CandidateEntity> findAllByLastName(String lastName);
     CandidateEntity saveCandidate(CandidateEntity candidateEntity);
 
 
