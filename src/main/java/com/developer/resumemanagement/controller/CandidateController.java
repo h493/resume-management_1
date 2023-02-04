@@ -40,6 +40,11 @@ public class CandidateController {
        return candidates;
     }
 
+    /**
+     * upload resume
+     * @param candidateEntity
+     * @return
+     */
     @PostMapping("/uploadResumeDetails")
     public CandidateEntity uploadResumeDetails(@RequestBody CandidateEntity candidateEntity){
         String candidateName = candidateEntity.getName();
